@@ -3,4 +3,10 @@
     <string name="title_gestures">Жесты</string>
     <string name="title_battery">Батарея</string>
     <string name="title_statistics">Статистика</string>
+    <string name="fist">Кулак</string>
+    <string name="scissors">Ножницы</string>
+    <string name="palm">Ладонь</string>
+    <string name="love">Рога</string>
+    <string name="firFing">Указательный</string>
+    <string name="active">Активен</string>
 </resources>

@@ -15,7 +15,7 @@
         android:id="@+id/navigation_battery"
         android:name="com.example.itog.ui.battery.BatteryFragment"
         android:label="@string/title_battery"
-        tools:layout="@layout/fragment_battery" />
+        tools:layout="@layout/activity_main2" />
 
     <fragment
         android:id="@+id/navigation_statistics"

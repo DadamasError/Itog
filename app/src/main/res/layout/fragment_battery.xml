@@ -4,19 +4,197 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gestures.GesturesFragment">
+    android:background="@color/trr"
+    tools:context=".ui.battery.BatteryFragment">
 
-    <TextView
-        android:id="@+id/text_battery"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/progress_bar"
+        app:layout_constraintBottom_toTopOf="@+id/battery_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="1"/>
+
+    <LinearLayout
+        android:id="@+id/battery_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_background"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="56dp"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:layout_weight="1"
+                android:text="Устройство:TVT5f-3000"
+                android:textColor="@color/treet"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/bluetoothBT"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/time_ionfo_background"
+                android:padding="10dp"
+                android:src="@drawable/bluetooth_alt"
+                tools:ignore="SpeakableTextPresentCheck"/>
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/time_ionfo_background"
+                android:padding="10dp"
+                android:src="@drawable/replace"
+                tools:ignore="SpeakableTextPresentCheck"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/prog_bar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="50dp"
+                android:text="Время до полной зарядки"
+                android:textColor="@color/treet"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/time_info2"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:background="@drawable/time_ionfo_background"
+                android:gravity="center"
+                android:text="3ч 27мин"
+                android:textColor="@color/treet"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/prog_bar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Оставшееся время работы"
+                android:layout_marginEnd="50dp"
+                android:textColor="@color/treet"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/time_info3"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:background="@drawable/time_ionfo_background"
+                android:gravity="center"
+                android:text="5ч 38мин"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/treet"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textColor="@color/prog_bar"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/device_discovery_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сканирование..."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="true"
+            android:visibility="visible"/>
+
+        <ListView
+            android:id="@+id/devices_list"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
